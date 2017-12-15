@@ -1,0 +1,42 @@
+// Define variables
+$notifications-bg:                 $overlay-bg;
+$notifications-content-shadow:     0 3px 10px 0 rgba($g5, 0.2);
+$notifications-bg-transition:      background-color 0.4s ease;
+$notifications-content-transition: transform 0.4s, box-shadow 0.4s;
+
+.notifications {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: $zindex-notifications;
+  outline: 0;
+  background-color: transparent;
+  transition: $notifications-bg-transition;
+}
+
+.notifications-content {
+  float: right;
+  overflow-y: auto;
+  max-width: 375px;
+  background-color: #fff;
+  width: 80%; // Fallback
+  width: calc(100vw - 60px);
+  height: 100%;
+  outline: 0;
+
+  // Closed state
+  transform: translate(375px);
+  box-shadow: none;
+  transition: $notifications-content-transition;
+}
+
+.notifications-open {
+  background-color: $notifications-bg;
+
+  .notifications-content {
+    transform: none;
+    box-shadow: $notifications-content-shadow;
+  }
+}

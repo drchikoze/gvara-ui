@@ -1,0 +1,105 @@
+// Alerts
+//
+// Define alert colors, border radius, and padding.
+
+$alert-padding-y:             12px !default;
+$alert-padding-x:             15px !default;
+$alert-margin-bottom:         20px !default;
+$alert-border-radius:         $base-border-radius !default;
+$alert-link-font-weight:      $bold !default;
+$alert-border-width:          $base-border-width !default;
+
+$alert-success-bg:            mix($green, $white, 15%) !default;
+$alert-success-text:          $green !default;
+$alert-success-border-color:  mix($green, $white, 45%) !default;
+
+$alert-info-bg:               mix($blue, $white, 15%) !default;
+$alert-info-text:             $blue !default;
+$alert-info-border-color:     mix($blue, $white, 35%) !default;
+
+$alert-warning-bg:            mix($yellow, $white, 15%) !default;
+$alert-warning-text:          darken($yellow, 18%) !default;
+$alert-warning-border-color:  mix($yellow, $white, 65%) !default;
+
+$alert-danger-bg:             mix($red, $white, 15%) !default;
+$alert-danger-text:           $red !default;
+$alert-danger-border-color:   mix($red, $white, 45%) !default;
+
+.alerts-container {
+  position: fixed;
+  bottom: 0;
+  left: 20px;
+  right: 20px;
+  z-index: 1080;
+
+  // @extend .d-flex;
+  // @extend .justify-content-center;
+}
+
+.alert {
+  @extend .d-flex;
+
+  @include border-radius($alert-border-radius);
+
+  margin-bottom: $alert-margin-bottom;
+  border: $alert-border-width solid transparent;
+  width: fit-content;
+
+  .alert-icon {
+    @extend .align-self-center;
+
+    padding-left: $alert-padding-x;
+    text-align: center;
+
+    i {
+      width: 24px;
+      font-size: 24px;
+    }
+  }
+
+  .alert-body {
+    @extend .flex-grow;
+
+    padding: $alert-padding-y $alert-padding-x;
+  }
+
+  .alert-close {
+    @extend .close;
+    @extend .trans;
+    @extend .align-self-center;
+
+    padding: 15px !important;
+    color: inherit;
+    text-align: center;
+
+    i {
+      width: 18px;
+      font-size: 18px;
+    }
+  }
+}
+
+// Provide class for links that match alerts
+.alert-link {
+  font-weight: $alert-link-font-weight;
+}
+
+// Alternate styles
+//
+// Generate contextual modifier classes for colorizing the alert.
+
+.alert-success {
+  @include alert-variant($alert-success-bg, $alert-success-border-color, $alert-success-text);
+}
+
+.alert-info {
+  @include alert-variant($alert-info-bg, $alert-info-border-color, $alert-info-text);
+}
+
+.alert-warning {
+  @include alert-variant($alert-warning-bg, $alert-warning-border-color, $alert-warning-text);
+}
+
+.alert-danger {
+  @include alert-variant($alert-danger-bg, $alert-danger-border-color, $alert-danger-text);
+}

@@ -1,0 +1,197 @@
+//
+// Variables
+//
+
+$btn-font-weight: $bold;
+$btn-font-size: map-get($text-sizes, sm); // 14px
+$btn-border-radius: 50px;
+$btn-transition: none;
+// $btn-focus-box-shadow: none;
+// $btn-active-box-shadow: none:
+$btn-outline-color: $quiet;
+$btn-outline-border-color: $base-border-color;
+$btn-outline-hover-color: $blue;
+$btn-filled-color: $white;
+$btn-blue-bg: $blue;
+$btn-red-bg: $red;
+$btn-gray-bg: $muted;
+
+$btn-link-hover-decoration: none; // $link-hover-decoration;
+$btn-link-hover-bg: $base-background-color;
+$btn-link-disabled-color: $muted;
+
+//
+// Base styles
+//
+
+.btn {
+  display: inline-block;
+  font-weight: $btn-font-weight;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  vertical-align: middle;
+  user-select: none;
+  border: $input-btn-border-width solid transparent;
+
+  @include button-size($input-btn-padding-y, $input-btn-padding-x, $btn-font-size, $input-btn-line-height, $btn-border-radius);
+  //@include transition($btn-transition);
+
+  // Share hover and focus styles
+  @include hover-focus {
+    text-decoration: none;
+  }
+
+  &:focus,
+  &.focus {
+    outline: 0;
+    // box-shadow: $btn-focus-box-shadow;
+  }
+
+  // Disabled comes first so active can properly restyle
+  &.disabled,
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+
+    @include box-shadow(none);
+  }
+
+  &:active,
+  &.active {
+    background-image: none;
+    transform: scaleX(0.98) scaleY(0.96);
+    // @include box-shadow($btn-focus-box-shadow, $btn-active-box-shadow);
+  }
+
+  &.loading {
+    background-image: url(/images/loading.svg);
+    background-position: 0 0;
+    cursor: not-allowed;
+    animation: btn-loading 0.5s linear infinite;
+
+    * {
+      opacity: 0.5;
+    }
+  }
+}
+
+// Future-proof disabling of clicks on `<a>` elements
+a.btn.disabled,
+fieldset[disabled] a.btn {
+  pointer-events: none;
+}
+
+//
+// Alternate buttons
+//
+
+.btn-outline {
+  @include button-outline-variant($btn-outline-color, $btn-outline-border-color, $btn-outline-hover-color);
+}
+
+.btn-blue {
+  @include button-variant($btn-filled-color, $btn-blue-bg, $btn-blue-bg);
+}
+
+.btn-red {
+  @include button-variant($btn-filled-color, $btn-red-bg, $btn-red-bg);
+}
+
+.btn-gray {
+  @include button-variant($btn-filled-color, $btn-gray-bg, $btn-gray-bg);
+}
+
+//
+// Alternate hover states
+//
+
+.btn-h-blue {
+  @include button-hover-variant($btn-filled-color, $btn-blue-bg, $btn-blue-bg);
+}
+
+.btn-h-red {
+  @include button-hover-variant($btn-filled-color, $btn-red-bg, $btn-red-bg);
+}
+
+.btn-h-gray {
+  @include button-hover-variant($btn-filled-color, $btn-gray-bg, $btn-gray-bg);
+}
+
+//
+// Link buttons
+//
+
+// Make a button look and behave like a link
+.btn-link {
+  font-weight: $bold;
+  color: $action-color;
+  border-radius: $btn-border-radius;
+
+  &,
+  &:active,
+  &.active,
+  &:disabled {
+    background-color: transparent;
+
+    @include box-shadow(none);
+  }
+
+  &,
+  &:focus,
+  &:active {
+    border-color: transparent;
+  }
+
+  @include hover {
+    border-color: transparent;
+  }
+
+  @include hover-focus {
+    color: $link-color;
+    text-decoration: $btn-link-hover-decoration;
+    background-color: $btn-link-hover-bg;
+  }
+
+  &:disabled {
+    color: $btn-link-disabled-color;
+
+    @include hover-focus {
+      text-decoration: none;
+    }
+  }
+}
+
+// //
+// // Button Sizes
+// //
+
+// .btn-lg {
+//   @include button-size($input-btn-padding-y-lg, $input-btn-padding-x-lg, $font-size-lg, $line-height-lg, $btn-border-radius-lg);
+// }
+
+// .btn-sm {
+//   @include button-size($input-btn-padding-y-sm, $input-btn-padding-x-sm, $font-size-sm, $line-height-sm, $btn-border-radius-sm);
+// }
+
+//
+// Block button
+//
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  &.btn-block {
+    width: 100%;
+  }
+}

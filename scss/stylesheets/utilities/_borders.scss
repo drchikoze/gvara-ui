@@ -1,0 +1,16 @@
+//
+// Borders
+//
+
+.ba { border: 1px solid $base-hr-color; }
+.bt { border-top: 1px solid $base-hr-color; }
+.br { border-right: 1px solid $base-hr-color; }
+.bb { border-bottom: 1px solid $base-hr-color; }
+.bl { border-left: 1px solid $base-hr-color; }
+.ba-0 { border: none !important; }
+.bt-0 { border-top: none !important; }
+.br-0 { border-right: none !important; }
+.bb-0 { border-bottom: none !important; }
+.bl-0 { border-left: none !important; }
+.brds { border-radius: $base-border-radius; }
+.brds-0 { border-radius: 0; }

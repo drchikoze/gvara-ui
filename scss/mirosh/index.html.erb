@@ -1,0 +1,71 @@
+---
+title: "Володимир Мірошниченко: Твори"
+---
+
+<%= partial "partials/styleguide/modal-box" %>
+<%= partial "partials/shared/notifications" %>
+
+<div class="site-content">
+
+  <%= partial "partials/shared/header-log-in" %>
+
+  <main id="content">
+    <div class="content-body">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-10">
+            <%= partial "partials/profile/profile-about" %>
+
+            <ul class="nav">
+              <li class="nav-item">
+                <a class="nav-link active" href="../">Твори (2)</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../following">Читає (137)</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../followers">Читачі (45)</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../likes">Вподобання (215)</a>
+              </li>
+            </ul>
+
+            <section class="row mt-20">
+              <div class="col-12 col-sm-6">
+                <%= partial "partials/shared/post-small" %>
+                <%= partial "partials/shared/post-small" %>
+                <%= partial "partials/shared/post-small" %>
+                <%= partial "partials/shared/post-small" %>
+                <%= partial "partials/shared/post-small" %>
+                <%= partial "partials/shared/post-small" %>
+                <%= partial "partials/shared/post-small" %>
+                <%= partial "partials/shared/post-small" %>
+                <%= partial "partials/shared/post-small" %>
+              </div>
+              <div class="col-12 col-sm-6">
+                <%= partial "partials/shared/post-small" %>
+                <%= partial "partials/shared/post-small" %>
+                <%= partial "partials/shared/post-small" %>
+                <%= partial "partials/shared/post-small" %>
+                <%= partial "partials/shared/post-small" %>
+                <%= partial "partials/shared/post-small" %>
+                <%= partial "partials/shared/post-small" %>
+                <%= partial "partials/shared/post-small" %>
+                <%= partial "partials/shared/post-small" %>
+              </div>
+
+              <div class="col-12 d-flex">
+                <button type="button" class="btn btn-outline mt-10 mb-50 mx-auto"><span>Показати ще...</span></button>
+              </div>
+
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <%= partial "partials/shared/footer" %>
+
+</div>

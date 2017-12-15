@@ -1,0 +1,49 @@
+---
+title: Gvara Styleguide
+---
+
+<%= partial "partials/modal-box" %>
+<div class="site-container">
+  <%= partial "partials/site-menu" %>
+  <div class="site-content">
+    <div class="site-content-inner">
+      <%= partial "partials/header" %>
+      <main id="content">
+        <div class="content-body">
+          <div class="container mt-20">
+            <div class="row">
+              <div class="col-lg-2">
+                <aside class="card">
+                  <ul class="list-unstyled text-md">
+                    <li class="bb"><a href="#buttons" class="pa-20 pt-15 pb-15 d-block text-quiet">Buttons</a></li>
+                    <li class="bb"><a href="#form-controls" class="pa-20 pt-15 pb-15 d-block text-quiet">Form Controls</a></li>
+                    <li class="bb"><a href="#inline-forms" class="pa-20 pt-15 pb-15 d-block text-quiet">Inline Forms</a></li>
+                    <li class="bb"><a href="#forms-validation" class="pa-20 pt-15 pb-15 d-block text-quiet">Forms Validation</a></li>
+                    <li class="bb"><a href="#dropdowns" class="pa-20 pt-15 pb-15 d-block text-quiet">Dropdowns</a></li>
+                    <li class="bb"><a href="#alerts" class="pa-20 pt-15 pb-15 d-block text-quiet">Alerts</a></li>
+                    <li class="bb"><a href="#modals" class="pa-20 pt-15 pb-15 d-block text-quiet">Modals</a></li>
+                    <li class=""><a href="#navs" class="pa-20 pt-15 pb-15 d-block text-quiet">Navs</a></li>
+                  </ul>
+                </aside>
+              </div>
+              <div class="col-12 col-lg-10">
+                <%= partial "partials/buttons" %>
+                <%= partial "partials/form-controls" %>
+                <%= partial "partials/inline-forms" %>
+                <%= partial "partials/forms-validation" %>
+                <%= partial "partials/dropdowns" %>
+                <%= partial "partials/alerts" %>
+                <%= partial "partials/modals" %>
+                <%= partial "partials/navs" %>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer>
+
+      </footer>
+    </div>
+  </div>
+</div>

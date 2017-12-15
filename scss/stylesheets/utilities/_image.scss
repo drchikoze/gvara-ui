@@ -1,0 +1,28 @@
+// $img-border-radius: 18% !default;
+
+.img-fluid { @include img-fluid(); }
+// // Rounded corners
+// .rounded { @include border-radius($img-border-radius); }
+
+// Perfect circle
+.circle { border-radius: 50%; }
+
+.img-cover {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.img-sprite {
+  background-repeat: no-repeat;
+  background-position-y: top;
+  display: inline-block;
+}
+
+.img-svg {
+  vertical-align: middle;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}

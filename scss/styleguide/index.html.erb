@@ -1,0 +1,56 @@
+---
+title: Gvara Styleguide
+---
+
+<div class="alerts-container">
+  <div class="alert alert-success fade show" role="alert">
+    <div class="alert-icon"><i class="icon-check-circle"></i></div>
+    <div class="alert-body"><strong>Well done!</strong> You successfully read <a href="#" class="alert-link">this important alert message</a>.</div>
+    <button type="button" class="alert-close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true"><i class="icon-close"></i></span>
+    </button>
+  </div>
+</div>
+
+<%= partial "partials/styleguide/modal-box" %>
+<%= partial "partials/shared/notifications" %>
+
+<div class="site-content">
+  <%= partial "partials/shared/header-log-out" %>
+  <main id="content">
+    <div class="content-body">
+      <div class="container mt-20">
+        <div class="row">
+          <div class="col-lg-2">
+            <aside class="card">
+              <ul class="list-unstyled text-md text-quiet">
+                <li class="bb"><a href="#buttons" class="pa-20 pt-15 pb-15 d-block">Buttons</a></li>
+                <li class="bb"><a href="#form-controls" class="pa-20 pt-15 pb-15 d-block">Form Controls</a></li>
+                <li class="bb"><a href="#inline-forms" class="pa-20 pt-15 pb-15 d-block">Inline Forms</a></li>
+                <li class="bb"><a href="#forms-validation" class="pa-20 pt-15 pb-15 d-block">Forms Validation</a></li>
+                <li class="bb"><a href="#dropdowns" class="pa-20 pt-15 pb-15 d-block">Dropdowns</a></li>
+                <li class="bb"><a href="#alerts" class="pa-20 pt-15 pb-15 d-block">Alerts</a></li>
+                <li class="bb"><a href="#modals" class="pa-20 pt-15 pb-15 d-block">Modals</a></li>
+                <li class="bb"><a href="#navs" class="pa-20 pt-15 pb-15 d-block">Navs</a></li>
+                <li class=""><a href="#preloader" class="pa-20 pt-15 pb-15 d-block">Preloader</a></li>
+              </ul>
+            </aside>
+          </div>
+          <div class="col-12 col-lg-10">
+            <%= partial "partials/styleguide/buttons" %>
+            <%= partial "partials/styleguide/form-controls" %>
+            <%= partial "partials/styleguide/inline-forms" %>
+            <%= partial "partials/styleguide/forms-validation" %>
+            <%= partial "partials/styleguide/dropdowns" %>
+            <%= partial "partials/styleguide/alerts" %>
+            <%= partial "partials/styleguide/modals" %>
+            <%= partial "partials/styleguide/navs" %>
+            <%= partial "partials/styleguide/preloader" %>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <%= partial "partials/shared/footer" %>
+</div>

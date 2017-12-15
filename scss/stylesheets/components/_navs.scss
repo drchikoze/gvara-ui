@@ -1,0 +1,38 @@
+// Navs
+
+.nav {
+  @extend .d-flex;
+  @extend .list-unstyled;
+
+  overflow-x: auto;
+
+  @include media-breakpoint-down(xxs) {
+    padding: 0 10px !important;
+  }
+}
+
+.nav-item {
+  @extend .flex-grow;
+}
+
+.nav-link {
+  display: block;
+  padding: 15px 10px;
+  border-bottom: solid $base-border-width $base-border-color;
+  text-align: center;
+  font-weight: $bold;
+  line-height: $line-height-sm; // 1.2
+  color: $quiet;
+
+  @include hover-focus {
+    border-bottom: solid $base-border-width $base-border-color-active;
+    color: $link-color;
+    text-decoration: none;
+  }
+
+  &.active {
+    border-bottom: solid $base-border-width $base-border-color-active;
+    color: $link-color;
+    pointer-events: none;
+  }
+}

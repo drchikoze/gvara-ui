@@ -1,0 +1,117 @@
+//
+// Text
+//
+
+// Font Sizes
+.text-sm { font-size: map-get($text-sizes, sm); } // 14px
+.text-md { font-size: map-get($text-sizes, md); } // 16px
+.text-lg { font-size: map-get($text-sizes, lg); } // 18px
+
+.h5 {
+  font-size: map-get($headings-sizes, xs); // 18px
+  font-weight: $bold;
+  line-height: $line-height-sm;
+}
+
+.h4 {
+  font-size: map-get($headings-sizes, sm); // 22px
+  font-weight: $bold;
+  line-height: $line-height-sm;
+}
+
+.h3 {
+  font-size: map-get($headings-sizes, md); // 26px
+  font-weight: $bold;
+  line-height: $line-height-sm;
+}
+
+.h2 {
+  font-size: map-get($headings-sizes, lg); // 32px
+  font-weight: $bold;
+  line-height: $line-height-sm;
+}
+
+.h1 {
+  font-size: map-get($headings-sizes, xl); // 40px
+  font-weight: $bold;
+  line-height: $line-height-sm;
+}
+
+// @include media-breakpoint-down(xs) {
+//   #content {
+//     // .text-xxxs { font-size: 1.0rem; }
+//     .text-xxs { font-size: 1.2rem; }
+//     .text-xs { font-size: 1.4rem; }
+//     .text-sm { font-size: 1.6rem; }
+//     .text-md { font-size: 1.8rem; }
+//     .text-lg { font-size: 2.0rem; }
+//     .text-xl { font-size: 2.4rem; }
+//     .text-xxl { font-size: 2.8rem; }
+//     .text-xxxl { font-size: 3.2rem; }
+//     .text-xxxxl { font-size: 3.6rem; }
+//     .text-xxxxxl { font-size: 4.2rem; }
+//   }
+// }
+
+// Line Heights
+.lh-xs { line-height: $line-height-xs; } // 1;
+.lh-sm { line-height: $line-height-sm; } // 1.2;
+.lh-md { line-height: $line-height-md; } // 1.5; // base-line-height
+
+// Text Colors
+$text-colors: (
+  base: $base-font-color,
+  white: $white,
+  quiet: $quiet,
+  muted: $muted,
+  blue: $blue,
+  green: $green,
+  red: $red,
+  whiteTest: $white
+);
+
+@each $color, $value in $text-colors {
+  .text-#{"" + $color},
+  .text-#{"" + $color} a:not(:hover):not(:focus) {
+    color: $value;
+  }
+}
+
+@each $color, $value in $text-colors {
+  .text-#{$color},
+  .text-#{$color} a:not(:hover):not(:focus) {
+    color: $value;
+  }
+}
+
+// Font Weights
+.text-normal { font-weight: $normal !important; }
+.text-bold { font-weight: $bold; }
+
+// Alignment
+.text-justify { text-align: justify; }
+.text-nowrap { white-space: nowrap; }
+.text-truncate { @include text-truncate; }
+
+// Responsive alignment
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.text-center { text-align: center; }
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    .text-#{$breakpoint}-left { text-align: left; }
+    .text-#{$breakpoint}-right { text-align: right; }
+    .text-#{$breakpoint}-center { text-align: center; }
+  }
+}
+
+// Transformation
+// .text-lowercase      { text-transform: lowercase; }
+// .text-uppercase      { text-transform: uppercase; }
+// .text-capitalize     { text-transform: capitalize; }
+
+// Misc
+.text-hide {
+  @include text-hide();
+}

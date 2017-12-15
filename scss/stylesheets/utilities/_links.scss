@@ -1,0 +1,21 @@
+.link-unstyled {
+  text-decoration: none;
+
+  @include hover {
+    text-decoration: none;
+  }
+}
+
+$link-colors: (
+  base: $base-font-color,
+  quiet: $quiet,
+  muted: $muted,
+  red: $red,
+);
+
+@each $color, $value in $link-colors {
+  .link-h-#{"" + $color}:hover,
+  .link-h-#{"" + $color}:focus {
+    color: $value;
+  }
+}

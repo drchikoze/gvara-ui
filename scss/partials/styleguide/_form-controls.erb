@@ -1,0 +1,108 @@
+<section id="form-controls" class="card pa-50">
+  <div class="overlay hidden">
+    <div class="overlay-inner">
+      <div class="preloader"></div>
+    </div>
+  </div>
+  <h2 class="h2 mb-30">Form Controls</h2>
+  <form>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+      <p class="form-text text-quiet">We'll never share your email with anyone else.</p>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+      <p class="form-text text-quiet">
+        Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+      </p>
+    </div>
+    <div class="form-group">
+      <label for="exampleSelect1">Example select</label>
+      <select class="form-control custom-select" id="exampleSelect1">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="exampleSelect2">Example multiple select</label>
+      <select multiple class="form-control" id="exampleSelect2">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="exampleTextarea">Example textarea</label>
+      <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputFile">File input</label>
+      <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+      <small id="fileHelp" class="form-text text-quiet">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
+    </div>
+    <fieldset disabled class="mb-20">
+      <div class="form-group">
+        <label for="disabledTextInput">Disabled input</label>
+        <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input">
+      </div>
+      <div class="form-group">
+        <label for="disabledSelect">Disabled select menu</label>
+        <select id="disabledSelect" class="form-control custom-select">
+          <option>Disabled select</option>
+        </select>
+      </div>
+      <div class="form-check disabled">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" disabled>
+          <span>Can't check this</span>
+        </label>
+      </div>
+    </fieldset>
+    <div class="form-group">
+      <input class="form-control" type="text" placeholder="Readonly input here…" readonly>
+    </div>
+    <fieldset class="form-group">
+      <legend class="mb-10">Radio buttons</legend>
+      <div class="form-check">
+        <label class="form-check-label">
+          <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+          <span>Option one is this and that&mdash;be sure to include why it's great</span>
+        </label>
+      </div>
+      <div class="form-check">
+      <label class="form-check-label">
+          <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
+          <span>Option two can be something else and selecting it will deselect option one</span>
+        </label>
+      </div>
+      <div class="form-check disabled">
+      <label class="form-check-label">
+          <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
+          <span>Option three is disabled</span>
+        </label>
+      </div>
+    </fieldset>
+    <fieldset class="form-group mb-20">
+      <div class="form-check">
+        <label class="form-check-label">
+          <input class="form-check-input" type="checkbox" value="">
+          <span>Option one is this and that&mdash;be sure to include why it's great</span>
+        </label>
+      </div>
+      <div class="form-check disabled">
+        <label class="form-check-label">
+          <input class="form-check-input" type="checkbox" value="" disabled>
+          <span>Option two is disabled</span>
+        </label>
+      </div>
+    </fieldset>
+    <button type="submit" class="btn btn-blue"><i class="icon-send text-lg mr-10"></i><span>Submit</span></button>
+  </form>
+</section>

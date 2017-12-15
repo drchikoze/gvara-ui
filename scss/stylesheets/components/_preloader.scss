@@ -1,0 +1,32 @@
+// To position preloader in a center of a container as an overlay use .overlay > .overlay-inner > .preloader
+// Add .pos-rel to the parent <div>
+// .card has "position: relative" by default.
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 6px;
+
+  .overlay-inner {
+    @extend .d-flex;
+
+    max-height: 1000px; // fallback
+    max-height: 100vh;
+    height: 100%;
+  }
+}
+
+// You can add .mt-* .mb-* to .preloader to change vertical space from other elements
+.preloader {
+  @extend .d-flex;
+
+  margin: auto;
+  width: 30px;
+  height: 30px;
+  background: url('/images/preloader.svg') no-repeat center center;
+}

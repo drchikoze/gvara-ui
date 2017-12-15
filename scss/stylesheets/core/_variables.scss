@@ -1,0 +1,172 @@
+// Variable format should follow the `$component-modifier-state-property` order.
+
+// Colors
+//
+// Shades of gray
+// eslint-disable color-hex-case
+$g1: #f0f2fa; // bg-gray, <hr> line
+$g2: #d5d9e6; // input & button outline
+$g3: #aab1c5; // text-muted, btn-gray
+$g4: #7c86a1; // text-quiet
+$g5: #4b5268; // base-font-color
+
+// Colorful
+$blue:   #5764ff;
+$red:    #ff7171;
+$green:  #63c774;
+$yellow: #fab964;
+
+
+// Light Colors (Alerts BG)
+$light-blue:    #ebeeff;
+$light-green:   #dff7e3;
+$light-red:     #ffe6e6;
+$light-yellow:  #fff2e0;
+
+// Font Colors
+$base-font-color: $g5;
+$quiet:           $g4;
+$muted:           $g3;
+$action-color:    $blue; // Link color
+$white: #fff;
+$overlay-bg: rgba($quiet, 0.75);
+
+$base-background-color: $g1;
+
+// Border Colors
+$base-border-color:        $g2; // Apply for inputs; for <hr> see $base-hr-color
+$base-border-color-hover:  $g3;
+$base-border-color-active: $action-color;
+
+// Links
+$link-color: $action-color;
+$link-hover-color: darken($action-color, 10%);
+$link-decoration: none;
+$link-hover-decoration: underline;
+
+// Borders
+$base-border-radius: 6px;
+$base-border-width: 1px !default;
+
+// Typography
+$base-font-family: "PT Sans", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+$base-hr-color: $g1;
+
+// Tables
+$table-cell-padding: 10px;
+
+// Font Sizes
+$text-sizes: (
+  sm: 14px,
+  md: 16px,
+  lg: 18px,
+) !default;
+
+$headings-sizes: (
+  xs: 18px,
+  sm: 22px,
+  md: 26px,
+  lg: 32px,
+  xl: 40px,
+) !default;
+
+$base-font-size: map-get($text-sizes, md); // 16px
+
+// Font Weights
+$normal: 400;
+$bold: 700;
+
+// Line Heights
+$line-height-xs: 1;
+$line-height-sm: 1.2; // text titles
+$line-height-md: 1.5; // body base line-height
+
+$base-line-height: $line-height-md !default;
+
+// Spacers
+$spacers: (
+  50: 50px,
+  40: 40px,
+  30: 30px,
+  20: 20px,
+  15: 15px,
+  10: 10px,
+  06: 6px,
+  04: 4px,
+) !default;
+
+// Buttons & Inputs
+$input-btn-border-width: $base-border-width;
+$input-btn-padding-y: 12px;
+$input-btn-padding-x: 20px;
+$input-padding-y: 13px;
+$input-padding-x: 16px;
+$input-btn-line-height: $base-line-height;
+
+// Z-index master list
+$zindex-dropdown:           1000 !default;
+$zindex-sticky:             1020 !default;
+$zindex-fixed:              1030 !default;
+$zindex-site-overlay:       1040 !default;
+$zindex-notifications:      1050 !default;
+$zindex-modal:              1060 !default;
+$zindex-popover:            1070 !default;
+$zindex-tooltip:            1080 !default;
+
+// Transitions
+$base-transition-function: ease;
+$base-transition-duration: 0.15s;
+$base-transition: all $base-transition-duration $base-transition-function;
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+$grid-breakpoints: (
+  xxs: 0,
+  xs: 425px,
+  sm: 640px,
+  md: 800px,
+  lg: 960px,
+  xl: 1200px
+) !default;
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+$container-max-widths: (
+  xxs: 100%,
+  xs: 100%,
+  sm: 100%,
+  md: 100%,
+  lg: 100%,
+  xl: 1200px,
+  xxl: 1440px
+) !default;
+
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
+$grid-columns:      12 !default;
+$grid-gutter-width-base: 20px !default;
+$grid-gutter-widths: (
+  xs: $grid-gutter-width-base,
+  sm: $grid-gutter-width-base,
+  md: $grid-gutter-width-base,
+  lg: $grid-gutter-width-base,
+  xl: $grid-gutter-width-base
+) !default;
+
+$grid-container-padding-width: 20px !default;
+
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+$enable-flex:               true !default;
+$enable-rounded:            true !default;
+$enable-shadows:            false !default;
+$enable-gradients:          false !default;
+$enable-transitions:        true !default;
+$enable-hover-media-query:  false !default;
+$enable-grid-classes:       true !default;
+$enable-print-styles:       true !default;

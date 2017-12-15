@@ -1,0 +1,14 @@
+{
+  "presets": ["es2015", "react", "stage-3"],
+  "plugins": [
+      "transform-decorators-legacy",
+      "syntax-async-functions",
+      "transform-regenerator",
+      "transform-class-properties",
+      "transform-es2015-arrow-functions",
+      ["transform-runtime", {
+          "polyfill": false,
+          "regenerator": true
+      }]
+  ]
+}

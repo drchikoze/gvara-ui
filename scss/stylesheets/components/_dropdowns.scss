@@ -1,0 +1,248 @@
+// Dropdowns
+//
+// Dropdown menu container and contents.
+
+$dropdown-min-width:             100px !default;
+$dropdown-max-width:             320px !default;
+$dropdown-max-height:            450px !default;
+$dropdown-padding-y:             6px !default;
+$dropdown-margin-top:            2px !default;
+$dropdown-bg:                    $white !default;
+$dropdown-border-color:          rgba($g5, 0.1) !default;
+$dropdown-border-width:          $base-border-width !default;
+$dropdown-divider-bg:            $base-hr-color !default;
+$dropdown-box-shadow:            0 7px 15px 0 rgba($g5, 0.1) !default;
+
+$dropdown-link-color:            $base-font-color !default;
+$dropdown-link-hover-color:      $base-font-color !default;
+$dropdown-link-hover-bg:         $base-background-color !default;
+
+$dropdown-link-active-color:     $action-color !default;
+$dropdown-link-active-bg:        $white !default;
+
+$dropdown-link-disabled-color:   rgba($dropdown-link-color, 0.5) !default;
+
+$dropdown-item-padding-y:        12px !default;
+$dropdown-item-padding-x:        20px !default;
+
+$dropdown-transition-duration:   0.15s;
+$dropdown-transition:            max-height 0.4s ease-out, opacity $dropdown-transition-duration ease-out;
+// $dropdown-perspective:           1000px;
+
+// $caret-width:                    .4em !default;
+
+// The dropdown wrapper (`<div>`)
+.dropup,
+.dropdown {
+  position: relative;
+  display: inline-block;
+  // perspective: $dropdown-perspective;
+  // z-index: 1;
+}
+
+.dropdown-toggle {
+  // Generate the caret automatically
+  &::after {
+    display: inline-block;
+    content: '\e90f'; // .icon-nav-down
+    font-family: 'gvara-icons' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    font-size: 130%;
+    margin-left: 0.4em;
+    transform: translateY(5%);
+  }
+
+  &:empty::after {
+    margin-left: 0;
+  }
+}
+
+// Allow for dropdowns to go bottom up (aka, dropup-menu)
+// Just add .dropup after the standard .dropdown class and you're set.
+// .dropup {
+//   .dropdown-toggle {
+//     &::after {
+//       border-top: 0;
+//       border-bottom: $caret-width solid;
+//     }
+//   }
+// }
+
+// The dropdown menu
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: $zindex-dropdown;
+  // display: none; // none by default, but block on "open" of the menu
+  float: left;
+  overflow-x: auto;
+  padding: $dropdown-padding-y 0;
+  margin: $dropdown-margin-top 0 0; // override default ul
+  font-size: $base-font-size; // Redeclare because nesting can cause inheritance issues
+  color: $base-font-color;
+  text-align: left; // Ensures proper alignment if parent has it changed (e.g., modal footer)
+  list-style: none;
+  background-color: $dropdown-bg;
+  background-clip: padding-box;
+  border: $dropdown-border-width solid $dropdown-border-color;
+  box-shadow: $dropdown-box-shadow;
+
+  @include border-radius($base-border-radius);
+}
+
+.dropdown-menu-right {
+  right: 0;
+  left: auto;
+}
+
+// Dividers (basically an `<hr>`) within the dropdown
+.dropdown-divider {
+  @include nav-divider($dropdown-divider-bg);
+}
+
+// Links, buttons, and more within the dropdown menu
+//
+// `<button>`-specific styles are denoted with `// For <button>s`
+.dropdown-item {
+  @extend .text-truncate;
+
+  display: block;
+  position: relative;
+  min-width: $dropdown-min-width;
+  // max-width: $dropdown-max-width - 40px;
+  width: 100%; // For `<button>`s
+  padding: $dropdown-item-padding-y $dropdown-item-padding-x;
+  clear: both;
+  font-weight: $normal;
+  color: $dropdown-link-color;
+  text-align: inherit; // For `<button>`s
+  white-space: nowrap; // prevent links from randomly breaking onto new lines
+  background: none; // For `<button>`s
+  border: 0; // For `<button>`s
+
+  @include hover-focus {
+    color: $dropdown-link-hover-color;
+    text-decoration: none;
+    background-color: $dropdown-link-hover-bg;
+  }
+
+  i {
+    width: 1em;
+    text-align: center;
+
+    @extend .h4;
+    @extend .vam;
+  }
+
+  &.active {
+    color: $dropdown-link-active-color;
+    text-decoration: none;
+    font-weight: $bold;
+    pointer-events: none;
+    // background-color: $dropdown-link-active-bg;
+    @include hover-focus {
+      background-color: $dropdown-bg;
+    }
+
+    i {
+      color: inherit !important;
+    }
+  }
+
+  &.active::before {
+    content: '';
+    background: $action-color;
+    width: 2px;
+    position: absolute;
+    left: 0;
+    top: 6px;
+    bottom: 6px;
+  }
+
+  &.disabled,
+  &:disabled {
+    color: $dropdown-link-disabled-color;
+    background-color: transparent;
+    pointer-events: none;
+    // Remove CSS gradients if they're enabled
+    @if $enable-gradients {
+      background-image: none;
+    }
+  }
+}
+
+// Open state for the dropdown
+.show {
+  // Remove the outline when :focus is triggered
+  > a {
+    outline: 0;
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .dropdown-menu {
+    // When fading in the dropdown, animate it
+    &.fade {
+      transition: ($dropdown-transition);
+      max-height: 10px;
+    }
+
+    &.show {
+      max-width: $dropdown-max-width;
+      max-height: $dropdown-max-height;
+    }
+  }
+}
+
+// Backdrop appears only on small screens. It should function as a 'close' button
+.dropdown-backdrop {
+  position: fixed;
+  background-color: $overlay-bg;
+  z-index: 2;
+  opacity: 0;
+}
+
+// Responsiveness on small screens
+@include media-breakpoint-down(xs) {
+  .dropdown-menu {
+    &.fade {
+      transition: transform $dropdown-transition-duration ease-out;
+      transform: translateY(30%);
+    }
+
+    &.show {
+      position: fixed;
+      top: auto;
+      left: 2px;
+      bottom: 2px;
+      right: 2px;
+      max-height: calc(100vh - 70px);
+      transform: translateY(0);
+    }
+
+    &.show + .dropdown-backdrop {
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 1;
+      transition: opacity $dropdown-transition-duration ease-out;
+    }
+  }
+}
+
+// Dropdown section headers
+// .dropdown-header {
+//   display: block;
+//   padding: $dropdown-padding-y $dropdown-item-padding-x;
+//   margin-bottom: 0; // for use with heading elements
+//   font-size: map-get($text-sizes, sm); // 14px
+//   color: $dropdown-header-color;
+//   white-space: nowrap; // as with > li > a
+// }

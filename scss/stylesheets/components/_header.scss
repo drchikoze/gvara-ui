@@ -1,0 +1,87 @@
+$header-height: 54px;
+
+header {
+  height: $header-height;
+  padding: 0 10px;
+  z-index: $zindex-fixed !important;
+
+  @extend .pos-fix-t;
+  @extend .d-flex;
+  @extend .bg-blue;
+
+  @include media-breakpoint-down(xs) {
+    height: 50px;
+  }
+}
+
+.header-item {
+  @extend .d-inline-flex;
+  @extend .trans;
+
+  padding: 10px 15px;
+  opacity: 0.8;
+
+  i {
+    @extend .align-self-center;
+    @extend .h4;
+    // @extend .text-white;
+    @extend .text-whiteTest;
+  }
+
+  span {
+    @extend .align-self-center;
+    // @extend .text-white;
+    @extend .text-whiteTest;
+    @extend .text-bold;
+  }
+
+  @include hover-focus {
+    opacity: 1;
+    text-decoration: none;
+  }
+}
+
+.header-item-active {
+  position: relative;
+  opacity: 1;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 19px;
+    border-style: solid;
+    border-width: 0 6px 6px;
+    border-color: transparent transparent #fff;
+  }
+}
+
+.header-logo {
+  position: absolute;
+  width: 52px;
+  left: calc(50% - 26px);
+  top: 12px;
+
+  @include media-breakpoint-down(xs) {
+    width: 48px;
+    left: calc(50% - 24px);
+    top: 11px;
+  }
+}
+
+// Overrides
+header .userpic {
+  width: 30px;
+  min-width: 30px;
+
+  @include media-breakpoint-down(xs) {
+    width: 26px;
+    min-width: 26px;
+  }
+}
+
+.header-user-menu {
+  @include media-breakpoint-up(sm) {
+    transform: translate(90px, 0);
+  }
+}

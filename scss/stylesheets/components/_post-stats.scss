@@ -1,0 +1,9 @@
+.stats-likes {
+  @extend .text-muted;
+  @extend .link-h-quiet;
+}
+
+.stats-is-liked {
+  @extend .text-red;
+  @extend .link-h-red;
+}

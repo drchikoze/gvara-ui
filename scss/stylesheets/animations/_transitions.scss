@@ -1,0 +1,15 @@
+$transition-fade: opacity $base-transition-duration $base-transition-function;
+
+.fade {
+  opacity: 0;
+  transition: ($transition-fade);
+
+  &.show {
+    opacity: 1;
+    transition-delay: 0s !important;
+  }
+}
+
+.trans {
+  @include transition;
+}

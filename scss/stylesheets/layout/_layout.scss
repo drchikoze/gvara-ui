@@ -1,0 +1,23 @@
+// Prevent from double scrolling when modal or notifications panel is open
+html,
+body,
+.site-content {
+  height: 100%;
+}
+
+body {
+  // overflow: hidden;
+}
+
+.site-content {
+  overflow-y: scroll;
+}
+
+// Add padding to prevent overlapping by a fixed header
+main {
+  padding-top: 54px;
+
+  @include media-breakpoint-down(xs) {
+    padding-top: 50px;
+  }
+}

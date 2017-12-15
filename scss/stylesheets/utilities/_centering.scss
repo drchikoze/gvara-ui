@@ -1,0 +1,44 @@
+//
+// Centering
+//
+
+// Horizontal
+.center-x {
+  position: absolute;
+  top: auto;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+// Vertical
+.center-y {
+  position: absolute;
+  top: 50%;
+  left: auto;
+  transform: translateY(-50%);
+}
+
+// Both
+.center-xy {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+//
+// Vertical Align
+//
+
+// Top
+.vat {
+  vertical-align: top;
+}
+// Midle
+.vam {
+  vertical-align: middle;
+}
+// Bottom
+.vab {
+  vertical-align: bottom;
+}

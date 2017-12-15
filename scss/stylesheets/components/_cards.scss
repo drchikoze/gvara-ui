@@ -1,0 +1,32 @@
+//
+// Variables
+//
+
+$card-multiplier-xs-down: 0.65;
+$card-base-margin-bottom: map-get($spacers, 20);
+$card-shadow: 0 1px 2px 0 rgba($quiet, 0.2);
+
+// Use .card together with .pa-{...} classes for making responsive cards
+
+.card {
+  background-color: $white;
+  border-radius: $base-border-radius;
+  box-shadow: $card-shadow;
+  position: relative;
+  margin-bottom: $card-base-margin-bottom;
+}
+
+// @include media-breakpoint-down(xs) {
+//   .card {
+//     margin-bottom: $card-base-margin-bottom * $card-multiplier-xs-down;
+//   }
+//
+//   .card,
+//   .padding-responsive {
+//     @each $name, $value in $spacers {
+//       &.pa-#{$name} {
+//         padding: $value * $card-multiplier-xs-down;
+//       }
+//     }
+//   }
+// }
